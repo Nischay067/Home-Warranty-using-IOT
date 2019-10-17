@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons class="color" slot="start">
+          <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+    <ion-title class="color">Send a new claim!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="color">
+  <ion-card class="color">
+    <ion-card-header>
+      <ion-card-title class="color" style="background: 4px">Description</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item >
+        <ion-textarea [(ngModel)]="textValue" autoGrow="true" class="color" placeholder="Enter description here..."></ion-textarea>
+        
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="color">
+      <ion-card-header>
+        <ion-card-title class="color" style="background: 4px">Appointment Schedule</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+          <ion-item class="color">
+              <ion-label class="color">Choose Date & Time :</ion-label>
+              <ion-datetime [(ngModel)]="appointment" class="color" displayFormat="D MMM YYYY H:mm" min="2019" max="2020"></ion-datetime>
+            </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+
+  <ion-card style="margin-bottom: 20px">
+      <ion-card-header>
+        <ion-card-title class="color">Images</ion-card-title>
+      </ion-card-header>
+      
+      <ion-item>
+        <ion-grid>
+            <ion-row>
+
+                <ion-col size="6">
+                        <a (click)="fromCamera1()"><img src="{{src1}}" /><h6 class="color2">Capture Image1 <ion-icon name="camera"></ion-icon></h6></a>          
+                </ion-col>
+                <ion-col size="6">
+                    <a class="color2" (click)="fromCamera2()"><img src="{{src2}}" /><h6 class="color2">Capture Image2 <ion-icon name="camera"></ion-icon></h6></a>                  
+            </ion-col>
+                </ion-row>
+        </ion-grid> 
+      </ion-item>
+    </ion-card>
+
+        <section >
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <ion-button color="primary" shape="round" (click)="submit()">Submit</ion-button>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <ion-button color="danger" shape="round" (click)="goHome()">Cancel</ion-button>
+          </section>
+    
+
+
+ 
+
+<!-- <ion-item>
+    <ion-label class="color2">Add Image</ion-label>
+  </ion-item>
+  <ion-item>    
+    <ion-icon class="color2" name="camera" (click)="fromCamera()"></ion-icon> &nbsp;&nbsp;
+    <ion-icon class="color2" name="folder" (click)="fromGallery()"></ion-icon>
+  </ion-item> -->
+</ion-content>
+
+
+<p></p>
